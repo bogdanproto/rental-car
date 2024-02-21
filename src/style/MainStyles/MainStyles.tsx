@@ -1,3 +1,4 @@
+import 'modern-normalize';
 import { createGlobalStyle } from 'styled-components';
 
 export const MainStyles = createGlobalStyle`
