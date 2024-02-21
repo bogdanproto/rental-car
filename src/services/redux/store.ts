@@ -16,7 +16,7 @@ import { dataSliceReducer } from './slice/dataSlice';
 const dataPersistConfig = {
   key: 'data',
   storage,
-  whitelist: [],
+  whitelist: ['favoriteAdverts'],
 };
 
 export const store = configureStore({

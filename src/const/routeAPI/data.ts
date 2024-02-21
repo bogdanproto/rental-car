@@ -1,7 +1,9 @@
 interface RoutesDataAPI {
-  CARS: string;
+  ADVERTS: string;
+  MAKES: string;
 }
 
-export const routeDataAPI: RoutesDataAPI = {
-  CARS: '',
-};
+export const routeDataAPI: RoutesDataAPI = Object.freeze({
+  ADVERTS: '/adverts',
+  MAKES: '/makes',
+});

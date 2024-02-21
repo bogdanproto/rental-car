@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "make": "Buick"
+  },
+  {
+    "id": 2,
+    "make": "Volvo"
+  },
+  {
+    "id": 3,
+    "make": "HUMMER"
+  },
+  {
+    "id": 4,
+    "make": "Subaru"
+  },
+  {
+    "id": 5,
+    "make": "Mitsubishi"
+  },
+  {
+    "id": 6,
+    "make": "Nissan"
+  },
+  {
+    "id": 7,
+    "make": "Lincoln"
+  },
+  {
+    "id": 8,
+    "make": "GMC"
+  },
+  {
+    "id": 9,
+    "make": "Hyundai"
+  },
+  {
+    "id": 10,
+    "make": "MINI"
+  },
+  {
+    "id": 11,
+    "make": "Bentley"
+  },
+  {
+    "id": 12,
+    "make": "Mercedes-Benz"
+  },
+  {
+    "id": 13,
+    "make": "Aston Martin"
+  },
+  {
+    "id": 14,
+    "make": "Lamborghini"
+  },
+  {
+    "id": 15,
+    "make": "Audi"
+  },
+  {
+    "id": 16,
+    "make": "BMW"
+  },
+  {
+    "id": 17,
+    "make": "Chevrolet"
+  },
+  {
+    "id": 18,
+    "make": "Chrysler"
+  },
+  {
+    "id": 19,
+    "make": "Kia"
+  },
+  {
+    "id": 20,
+    "make": "Land"
+  }
+]
