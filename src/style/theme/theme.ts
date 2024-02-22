@@ -1,20 +1,30 @@
 export const theme: Record<string, string> = {
   /* Colors */
   colorCardBcg: 'rgba(211, 211, 211, 0.3)',
+  colorElement: 'rgba(211, 211, 211, 1.0)',
   colorLogo: 'rgba(5, 129, 146, 90%)',
   colorMainText: 'rgba(217, 217, 217, 100%)',
+  colorBlueText: ' rgba(52, 112, 255, 1)',
+  colorSubText: 'rgba(18, 20, 23, 0.5)',
+  colorIcon: 'rgba(255, 255, 255, 0.8)',
 
   /* color form */
   colorInputBorder: 'rgba(184, 184, 184, 0.434)',
+  colorInputBackgroud: 'rgba(247, 247, 251, 1)',
+  colorOptionBackgroud: 'rgba(255, 255, 255, 1)',
+  colorLabel: 'rgba(138, 138, 137, 1)',
   colorInputBorderHover: 'rgba(184, 184, 184, 0.8)',
-  colorInputText: 'rgba(100, 100, 100, 1)',
-  colorButtonForm: 'rgba(5, 129, 146, 0.7)',
-  colorButtonTextForm: 'rgba(20, 20, 20, 0.8)',
+  colorInputText: 'rgba(18, 20, 23, 1)',
+
+  colorButton: 'rgba(52, 112, 255, 1)',
+  colorButtonText: 'rgba(255, 255, 255, 1)',
+
   colorLinkAutn: 'rgba(248, 184, 0, 80%)',
 
   /* event colors  */
 
-  colorActive: 'rgba(0, 164, 185, 70%)',
+  colorActive: 'rgba(11, 68, 205, 1)',
+  colorActiveText: 'rgba(235, 235, 235, 1)',
 
   /* errors colors  */
 

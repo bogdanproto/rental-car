@@ -1,10 +1,10 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { ISliceData } from 'interfaces';
-import { IAdvert, IMake } from 'interfaces/data/IData';
+import { ISelectOption, ISliceData } from 'interfaces';
+import { IAdvert } from 'interfaces/data/IData';
 
 export const handleFulfilledGetAllMakes = (
   state: ISliceData,
-  action: PayloadAction<IMake[]>
+  action: PayloadAction<ISelectOption[]>
 ) => {
   state.makes = action.payload;
 

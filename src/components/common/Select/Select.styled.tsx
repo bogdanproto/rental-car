@@ -1,48 +1,33 @@
 import styled from 'styled-components';
 
-export const SelectForm = styled.div`
+export const SelectStyled = styled.div`
+  display: flex;
+  flex-direction: column;
   label {
-    position: relative;
     padding-left: 8px;
-    padding-bottom: 8px;
 
     font-size: 12px;
     font-weight: bold;
-  }
+    line-height: 28px;
 
-  label::before {
-    content: '*';
-    position: absolute;
-
-    left: 0;
-    top: -2px;
-
-    font-size: 14px;
-    color: ${({ theme }) => theme.colorErrorsInput};
+    color: ${({ theme }) => theme.colorLabel};
   }
 
   select {
     width: 100%;
-    height: 36px;
+    height: 48px;
     box-sizing: border-box;
 
-    padding-left: 8px;
+    padding: 14px 89px 14px 18px;
 
-    border: 1px solid ${({ theme }) => theme.colorInputBorder};
+    border: none;
     box-shadow: ${({ theme }) => theme.shadowInput};
-    border-radius: 6px;
+    border-radius: 14px;
+    outline: none;
 
+    background-color: ${({ theme }) => theme.colorInputBackgroud};
     color: ${({ theme }) => theme.colorInputText};
 
     transition: all ${({ theme }) => theme.cubicTransition};
-
-    &:hover,
-    &:focus {
-      border: 1px solid ${({ theme }) => theme.colorActive};
-    }
-
-    select > option {
-      width: 100%;
-    }
   }
 `;

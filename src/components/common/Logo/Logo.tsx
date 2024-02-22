@@ -1,11 +1,11 @@
-import { SiYourtraveldottv } from 'react-icons/si';
+import { FaCar } from 'react-icons/fa';
 import { LogoContainer } from './Logo.styled';
 
 export const Logo = () => {
   return (
     <LogoContainer>
-      <SiYourtraveldottv fontSize="96px" />
-      <h1>UA RENT CAR</h1>
+      <FaCar fontSize="24px" />
+      <p>UA RENT CAR</p>
     </LogoContainer>
   );
 };

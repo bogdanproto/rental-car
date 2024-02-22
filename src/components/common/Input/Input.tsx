@@ -1,30 +1,22 @@
-import { ChangeEvent } from 'react';
 import { InputStyled } from './Input.styled';
 
 interface InputProps {
-  label: string;
-  placeholder: string;
   type: string;
-  id: string;
-  value: string;
-  onChange: (evt: ChangeEvent<HTMLInputElement>) => void;
+  content: string;
+  label?: string;
+  register: any;
 }
 
 export const Input: React.FC<
   InputProps & React.InputHTMLAttributes<HTMLInputElement>
-> = ({ label, id, type, placeholder, value, onChange, ...props }) => {
+> = ({ label, type, content, register, ...props }) => {
   return (
     <InputStyled>
-      <label htmlFor={id}>{label}</label>
-      <input
-        id={id}
-        name={id}
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        onChange={onChange}
-        {...props}
-      />
+      <label htmlFor={register.name}>{label}</label>
+      <div>
+        <input type={type} {...register} {...props} />
+        <span>{content}</span>
+      </div>
     </InputStyled>
   );
 };

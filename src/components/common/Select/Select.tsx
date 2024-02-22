@@ -1,30 +1,32 @@
-import { ChangeEvent } from 'react';
-import { SelectForm } from './Select.styled';
+import { SelectStyled } from './Select.styled';
+import { ISelectOption } from 'interfaces';
 
 interface SelectProps {
   label: string;
   placeholder: string;
-  id: string;
-  options: any;
-  value: string;
-  onChange: (evt: ChangeEvent<HTMLSelectElement>) => void;
+  options: ISelectOption[];
+  register: any;
 }
 
 export const Select: React.FC<SelectProps> = ({
   label,
-  id,
   options,
   placeholder,
-  value,
-  onChange,
+  register,
 }) => {
   return (
-    <SelectForm>
-      <label htmlFor={label}>{label}</label>
+    <SelectStyled>
+      <label htmlFor={register.name}>{label}</label>
 
-      <select id={id} name={id} value={value} onChange={onChange}>
+      <select {...register}>
         <option value="">{placeholder}</option>
+        {options.length > 0 &&
+          options.map(({ id, label }) => (
+            <option key={id} value={label}>
+              {label}
+            </option>
+          ))}
       </select>
-    </SelectForm>
+    </SelectStyled>
   );
 };

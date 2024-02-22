@@ -11,12 +11,12 @@ html {
 
  body {
   margin: 0;
-  font-family: 'Play', sans-serif;
+  font-family: 'Manrope', sans-serif;
 
 }
 
 code {
-  font-family: 'Play', sans-serif;
+  font-family: 'Manrope', sans-serif;
 
 }
 
