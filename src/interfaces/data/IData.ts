@@ -1,5 +1,6 @@
 import { IParams } from 'interfaces/common/params';
 import { IFilter } from './IFilter';
+import { ISelectOption } from 'interfaces/form/select';
 
 export interface IAdvert {
   id: number;
@@ -20,15 +21,10 @@ export interface IAdvert {
   mileage: number;
 }
 
-export interface IMake {
-  id: number;
-  make: string;
-}
-
 export interface ISliceData {
   adverts: IAdvert[];
   favoriteAdverts: IAdvert[];
-  makes: IMake[];
+  makes: ISelectOption[];
   pagination: IParams;
   filter: IFilter | null;
   error: string | null;

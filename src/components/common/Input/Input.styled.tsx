@@ -2,43 +2,46 @@ import styled from 'styled-components';
 
 export const InputStyled = styled.div`
   label {
-    position: relative;
     padding-left: 8px;
-    padding-bottom: 8px;
 
     font-size: 12px;
     font-weight: bold;
+    line-height: 28px;
+
+    color: ${({ theme }) => theme.colorLabel};
   }
 
-  label::before {
-    content: '*';
-    position: absolute;
-
-    left: 0;
-    top: -2px;
-
-    font-size: 14px;
-    color: ${({ theme }) => theme.colorErrorsInput};
+  div {
+    position: relative;
   }
 
   input {
     width: 100%;
-    height: 36px;
+    height: 48px;
     box-sizing: border-box;
 
-    padding-left: 8px;
+    padding: 14px 14px 14px 60px;
 
-    border: 1px solid ${({ theme }) => theme.colorInputBorder};
+    border: none;
     box-shadow: ${({ theme }) => theme.shadowInput};
-    border-radius: 6px;
+    border-radius: 14px;
+    outline: none;
 
+    background-color: ${({ theme }) => theme.colorInputBackgroud};
     color: ${({ theme }) => theme.colorInputText};
 
     transition: all ${({ theme }) => theme.cubicTransition};
+  }
 
-    &:hover,
-    &:focus {
-      border: 1px solid ${({ theme }) => theme.colorActive};
-    }
+  span {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: ${({ theme }) => theme.colorInputText};
   }
 `;

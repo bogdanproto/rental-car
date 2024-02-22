@@ -32,13 +32,14 @@ export const ModalWindow: React.FC<ModalWindowProps> = ({
           boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
           width: 'fit-content',
           height: 'fit-content',
+          padding: '40px',
         },
       }}
       isOpen={isOpen}
       onRequestClose={onClose}
     >
       <ModalCloseButton onClick={onClose}>
-        <MdClose />
+        <MdClose fontSize={24} />
       </ModalCloseButton>
       {children}
     </Modal>

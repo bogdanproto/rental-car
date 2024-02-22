@@ -5,10 +5,8 @@ export const LogoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-
-  margin-bottom: 12px;
 
   font-size: 12px;
-  color: ${({ theme }) => theme.colorLogo};
+  font-weight: 800;
+  color: ${({ theme }) => theme.colorInputText};
 `;
