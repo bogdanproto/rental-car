@@ -2,6 +2,10 @@ import { IAdvert } from 'interfaces/data/IData';
 import { IoMdHeartEmpty } from 'react-icons/io';
 import { IoMdHeart } from 'react-icons/io';
 import {
+  useTypeDispatch,
+  useTypeSelector,
+} from 'services/redux/customHook/typeHooks';
+import {
   ButtonBox,
   CardContainer,
   SubtitleCard,
@@ -19,17 +23,31 @@ import { IconBtn } from '../IconBtn/IconBtn.styled';
 import { ModalWindow } from '../Modal/Modal';
 import { CardDetail } from '../CardDetail/CardDetail';
 
+import { toggelFavorite } from 'services/redux/slice/dataSlice';
+import { selectFavIds } from 'services/redux/selectors';
+
 interface CardProps {
   advert: IAdvert;
 }
 
 export const Card: React.FC<CardProps> = ({ advert }) => {
-  const isActive = true;
+  const dispatch = useTypeDispatch();
   const { isOpen, toggle } = useModal();
+
+  const isActive = useTypeSelector(state =>
+    selectFavIds(state).includes(advert.id)
+  );
+
+  const handleClickFavorite = (id: number) => {
+    dispatch(toggelFavorite(id));
+  };
+
   return (
     <>
       <CardContainer>
-        <IconBtn>{isActive ? <IoMdHeart /> : <IoMdHeartEmpty />}</IconBtn>
+        <IconBtn onClick={() => handleClickFavorite(advert.id)} type="button">
+          {isActive ? <IoMdHeart /> : <IoMdHeartEmpty />}
+        </IconBtn>
 
         <img src={advert.img} alt={advert.make} />
 

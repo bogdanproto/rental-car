@@ -8,7 +8,7 @@ import {
   handleRejectedData,
 } from '../handlesStatus';
 import { getAllAdverts } from '../operations/getAllAdverts';
-import { toAddToFavorite, toSetFilter } from '../reducers';
+import { toSetFilter, toToggelFavorite } from '../reducers';
 
 const initialState: ISliceData = {
   adverts: [],
@@ -16,7 +16,7 @@ const initialState: ISliceData = {
   makes: [],
 
   pagination: {
-    page: 1,
+    page: 0,
     limit: 12,
   },
 
@@ -35,7 +35,7 @@ const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
-    addToFavorite: toAddToFavorite,
+    toggelFavorite: toToggelFavorite,
     setFilter: toSetFilter,
   },
   extraReducers: builder => {
@@ -54,4 +54,4 @@ const dataSlice = createSlice({
 });
 
 export const dataSliceReducer = dataSlice.reducer;
-export const { addToFavorite, setFilter } = dataSlice.actions;
+export const { toggelFavorite, setFilter } = dataSlice.actions;

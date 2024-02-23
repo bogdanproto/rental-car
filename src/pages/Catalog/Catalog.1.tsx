@@ -13,18 +13,19 @@ import { Card, List, PageContainer, SearchForm } from 'components/common';
 import { BtnLink } from 'components/common/BtnLink/BtnLink.styled';
 import { IAdvert } from 'interfaces/data/IData';
 
-const Catalog = () => {
+export const Catalog = () => {
   const dispatch = useTypeDispatch();
-
   const adverts = useTypeSelector(selectAdverts);
   const { page, limit } = useTypeSelector(selectParams);
   const isAdvertsExist = useTypeSelector(selectIsAdvertsExist);
+
+  console.log(isAdvertsExist);
 
   useEffect(() => {
     if (adverts.length) {
       return;
     }
-    dispatch(getAllAdverts({ page: 1, limit: 12 }));
+    dispatch(getAllAdverts({ page: 1, limit }));
   }, [adverts.length, dispatch]);
 
   const handleClick = () => {
@@ -49,5 +50,3 @@ const Catalog = () => {
     </PageContainer>
   );
 };
-
-export default Catalog;

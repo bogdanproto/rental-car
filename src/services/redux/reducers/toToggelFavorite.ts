@@ -3,7 +3,7 @@ import { errorMessage } from 'const';
 import { ISliceData } from 'interfaces';
 import { IAdvert } from 'interfaces/data/IData';
 
-export const toAddToFavorite = (
+export const toToggelFavorite = (
   state: ISliceData,
   action: PayloadAction<number>
 ) => {

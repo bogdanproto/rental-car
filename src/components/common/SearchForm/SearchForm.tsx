@@ -6,21 +6,13 @@ import { InputConnectBox, SearchFormStyled } from './SearchForm.styled';
 import { Select } from '../Select/Select';
 import { createArrSelect } from 'services/helpers';
 import { Input } from '../Input/Input';
-
-const options = [
-  {
-    id: 1,
-    label: 'Buick',
-  },
-  {
-    id: 2,
-    label: 'Volvo',
-  },
-  {
-    id: 3,
-    label: 'HUMMER',
-  },
-];
+import {
+  useTypeDispatch,
+  useTypeSelector,
+} from 'services/redux/customHook/typeHooks';
+import { selectMakes } from 'services/redux/selectors';
+import { useEffect } from 'react';
+import { getAllMakes } from 'services/redux/operations/getAllMakes';
 
 type Inputs = {
   make?: string;
@@ -37,15 +29,23 @@ const schemaSearchForm = yup.object({
 });
 
 export const SearchForm = () => {
+  const dispatch = useTypeDispatch();
+  const options = useTypeSelector(selectMakes);
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty },
+    formState: { isDirty },
   } = useForm({
     resolver: yupResolver(schemaSearchForm),
   });
 
-  console.log(errors);
+  useEffect(() => {
+    if (options.length) {
+      return;
+    }
+    dispatch(getAllMakes(null));
+  }, [dispatch, options.length]);
 
   const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 

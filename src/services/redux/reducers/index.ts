@@ -1,2 +1,2 @@
-export * from './addToFavorite';
+export * from './toToggelFavorite';
 export * from './toSetFilter';

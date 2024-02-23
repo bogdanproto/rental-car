@@ -9,3 +9,4 @@ export * from './arr/createArrSelect';
 export * from './string/transformArrstoStr';
 export * from './string/parseStrToArr';
 export * from './markUp/createTextBox';
+export * from './url/setSearchParams';
