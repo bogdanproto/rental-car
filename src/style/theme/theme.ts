@@ -1,10 +1,14 @@
 export const theme: Record<string, string> = {
   /* Colors */
   colorCardBcg: 'rgba(211, 211, 211, 0.3)',
+  colorElementBcg: 'rgba(249, 249, 249, 1)',
+
   colorElement: 'rgba(211, 211, 211, 1.0)',
   colorLogo: 'rgba(5, 129, 146, 90%)',
   colorMainText: 'rgba(217, 217, 217, 100%)',
+  colorElementText: 'rgba(54, 53, 53, 1)',
   colorBlueText: ' rgba(52, 112, 255, 1)',
+  colorTitleText: 'rgba(18, 20, 23, 1)',
   colorSubText: 'rgba(18, 20, 23, 0.5)',
   colorIcon: 'rgba(255, 255, 255, 0.8)',
 

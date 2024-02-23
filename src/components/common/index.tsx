@@ -11,3 +11,4 @@ export * from './Card/Card';
 export * from './IconBtn/IconBtn.styled';
 export * from './SearchForm/SearchForm';
 export * from './PageContainer/PageContainer.styled';
+export * from './LinkBtn/LinkBtn.styled';

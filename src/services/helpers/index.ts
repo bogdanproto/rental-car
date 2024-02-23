@@ -6,3 +6,6 @@ export * from './string/getClassCar';
 export * from './string/formatWordFirstUpper';
 export * from './string/formatTitle';
 export * from './arr/createArrSelect';
+export * from './string/transformArrstoStr';
+export * from './string/parseStrToArr';
+export * from './markUp/createTextBox';

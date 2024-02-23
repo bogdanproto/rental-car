@@ -5,8 +5,9 @@ export const CardContainer = styled.li`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 14px;
 
   border-radius: 8px;
 
@@ -18,8 +19,6 @@ export const CardContainer = styled.li`
     height: 268px;
     object-fit: cover;
     border-radius: 8px;
-
-    margin-bottom: 14px;
   }
 `;
 
@@ -27,8 +26,6 @@ export const TitleCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  margin-bottom: 8px;
 
   width: 100%;
 
@@ -56,8 +53,6 @@ export const SubtitleCard = styled.div`
   width: 100%;
   height: 40px;
 
-  margin-bottom: 28px;
-
   overflow: hidden;
 
   p {
@@ -67,4 +62,7 @@ export const SubtitleCard = styled.div`
     letter-spacing: 0em;
     color: ${({ theme }) => theme.colorSubText};
   }
+`;
+export const ButtonBox = styled.div`
+  margin-top: 10px;
 `;
