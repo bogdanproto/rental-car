@@ -37,6 +37,7 @@ const Catalog = () => {
     if (adverts.length) {
       return;
     }
+
     dispatch(getAllAdverts({ page: 1, limit: 12 }));
   }, [adverts.length, dispatch]);
 
@@ -46,7 +47,7 @@ const Catalog = () => {
 
   return (
     <PageContainer>
-      <SearchForm setFilter={setCatalogFilter} startFilter={currentFilter} />
+      <SearchForm setFilter={setCatalogFilter} currentFilter={currentFilter} />
       <List>
         {selectedAdverts.length > 0
           ? selectedAdverts.map((advert: IAdvert) => (

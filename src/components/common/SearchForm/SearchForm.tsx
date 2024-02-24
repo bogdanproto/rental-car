@@ -28,7 +28,7 @@ interface SearchFormProps {
   setFilter:
     | ActionCreatorWithPayload<IFilter, 'data/setCatalogFilter'>
     | ActionCreatorWithPayload<IFilter, 'data/setFavoriteFilter'>;
-  startFilter: IFilter;
+  currentFilter: IFilter;
 }
 
 const schemaSearchForm = yup.object({
@@ -40,7 +40,7 @@ const schemaSearchForm = yup.object({
 
 export const SearchForm: React.FC<SearchFormProps> = ({
   setFilter,
-  startFilter: { make, price, mileageFrom, mileageTo },
+  currentFilter,
 }) => {
   const dispatch = useTypeDispatch();
   const options = useTypeSelector(selectMakes);
@@ -52,10 +52,10 @@ export const SearchForm: React.FC<SearchFormProps> = ({
     formState: { errors },
   } = useForm({
     defaultValues: {
-      make,
-      price,
-      mileageFrom,
-      mileageTo,
+      make: currentFilter.make,
+      price: currentFilter.price,
+      mileageFrom: currentFilter.mileageFrom,
+      mileageTo: currentFilter.mileageTo,
     },
     resolver: yupResolver(schemaSearchForm),
   });
@@ -73,6 +73,10 @@ export const SearchForm: React.FC<SearchFormProps> = ({
     const isError = verifyErrHF({ mileageFrom, mileageTo }, setError);
 
     if (isError) {
+      return;
+    }
+
+    if (JSON.stringify(currentFilter) === JSON.stringify(data)) {
       return;
     }
 

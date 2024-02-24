@@ -13,6 +13,7 @@ export const Input: React.FC<
   return (
     <InputStyled>
       <label htmlFor={register.name}>{label}</label>
+
       <div>
         <input type={type} {...register} {...props} />
         <span>{content}</span>

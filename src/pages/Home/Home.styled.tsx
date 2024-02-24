@@ -6,6 +6,8 @@ export const HomeContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 16px;
+
   height: calc(100vh - 360px);
 
   img {

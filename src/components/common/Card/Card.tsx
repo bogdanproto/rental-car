@@ -60,15 +60,16 @@ export const Card: React.FC<CardProps> = ({ advert }) => {
             </h3>
             <h3>{advert.rentalPrice}</h3>
           </TitleCard>
+
           <SubtitleCard>
             <p>
               {`${formatAddress(advert.address)} |  
-         ${advert.rentalCompany} | 
-         ${getClassCar(advert.rentalPrice)} 
-         ${formatWordFirstUpper(advert.type)} |  
-         ${formatWordFirstUpper(advert.model)} | 
-         ${advert.id} | 
-         ${advert.functionalities[0]}`}
+                ${advert.rentalCompany} | 
+                ${getClassCar(advert.rentalPrice)} 
+                 ${formatWordFirstUpper(advert.type)} |  
+                ${formatWordFirstUpper(advert.model)} | 
+                ${advert.id} | 
+                ${advert.functionalities[0]}`}
             </p>
           </SubtitleCard>
         </div>
@@ -79,6 +80,7 @@ export const Card: React.FC<CardProps> = ({ advert }) => {
           </Button>
         </ButtonBox>
       </CardContainer>
+
       <ModalWindow isOpen={isOpen} onClose={toggle}>
         <CardDetail advert={advert} />
       </ModalWindow>
