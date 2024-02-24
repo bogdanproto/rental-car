@@ -27,7 +27,7 @@ export const CardDetailContainer = styled.div`
 `;
 
 export const SubtitleCardDetail = styled(SubtitleCard)`
-  width: 277px;
+  width: 330px;
 
   h4 {
     font-weight: 400;

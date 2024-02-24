@@ -1,7 +1,7 @@
-import { Header } from 'components/Header/Header';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router';
 import { AppContainer, PageContent } from './SharedLayout.styled';
+import { Header } from 'components/Header/Header';
 import { Notify } from 'components/common';
 
 export const SharedLayout = () => {
@@ -9,6 +9,7 @@ export const SharedLayout = () => {
     <AppContainer>
       <Notify />
       <Header />
+
       <PageContent>
         <Suspense>
           <Outlet />

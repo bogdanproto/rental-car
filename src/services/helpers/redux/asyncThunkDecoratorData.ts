@@ -7,13 +7,12 @@ export const asyncThunkDecoratorData =
       if (arg === argument.empty) {
         return await operation();
       }
+
       return await operation(arg);
     } catch (error: any) {
       if (error.code === 'ERR_CANCELED') {
         return thunkAPI.rejectWithValue(null);
       }
-
-      console.log(error);
 
       return thunkAPI.rejectWithValue(handleErrors(error));
     }

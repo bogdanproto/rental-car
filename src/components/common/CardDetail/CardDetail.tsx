@@ -53,6 +53,7 @@ export const CardDetail: React.FC<CardDetailProps> = ({
             {year}
           </h3>
         </TitleCard>
+
         <SubtitleCardDetail>
           <p>
             {`${formatAddress(address)} |  

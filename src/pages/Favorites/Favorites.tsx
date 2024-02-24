@@ -21,7 +21,7 @@ const Favorites = () => {
 
   return (
     <PageContainer>
-      <SearchForm setFilter={setFavoriteFilter} startFilter={currentFilter} />
+      <SearchForm setFilter={setFavoriteFilter} currentFilter={currentFilter} />
 
       <List>
         {favFilteredAdverts.length > 0
