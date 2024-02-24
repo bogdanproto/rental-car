@@ -1,4 +1,5 @@
 import '../src/style/fonts/fonts.css';
+import 'react-toastify/dist/ReactToastify.css';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { persistor, store } from './services/redux/store';

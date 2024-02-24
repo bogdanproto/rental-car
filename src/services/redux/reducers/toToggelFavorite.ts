@@ -19,7 +19,7 @@ export const toToggelFavorite = (
   const advert = state.adverts.find((advert: IAdvert) => advert.id === id);
 
   if (!advert) {
-    state.error = errorMessage.not_found_id;
+    state.error = errorMessage.NOT_FOUND_ID;
     return;
   }
 

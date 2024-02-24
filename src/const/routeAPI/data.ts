@@ -4,6 +4,6 @@ interface RoutesDataAPI {
 }
 
 export const routeDataAPI: RoutesDataAPI = Object.freeze({
-  ADVERTS: '/advert',
+  ADVERTS: '/adverts',
   MAKES: '/makes',
 });

@@ -22,9 +22,10 @@ const Favorites = () => {
   return (
     <PageContainer>
       <SearchForm setFilter={setFavoriteFilter} startFilter={currentFilter} />
+
       <List>
         {favFilteredAdverts.length > 0
-          ? favAdverts.map((advert: IAdvert) => (
+          ? favFilteredAdverts.map((advert: IAdvert) => (
               <Card key={advert.id} advert={advert} />
             ))
           : favAdverts.length > 0 && <NotMatches />}
