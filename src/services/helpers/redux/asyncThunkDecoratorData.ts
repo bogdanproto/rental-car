@@ -13,6 +13,8 @@ export const asyncThunkDecoratorData =
         return thunkAPI.rejectWithValue(null);
       }
 
-      return thunkAPI.rejectWithValue(handleErrors(error.response?.data));
+      console.log(error);
+
+      return thunkAPI.rejectWithValue(handleErrors(error));
     }
   };

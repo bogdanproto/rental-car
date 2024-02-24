@@ -10,8 +10,7 @@ export const Button = styled.button`
 
   padding: 12px 99px;
 
-  background-color: ${({ theme, disabled }) =>
-    disabled ? 'lightgrey' : theme.colorButton};
+  background-color: ${({ theme }) => theme.colorButton};
   color: ${({ theme }) => theme.colorButtonText};
   border: none;
   border-radius: 12px;
@@ -24,7 +23,6 @@ export const Button = styled.button`
 
   &:hover,
   &:focus {
-    background-color: ${({ theme, disabled }) =>
-      disabled ? 'lightgrey' : theme.colorActive};
+    background-color: ${({ theme }) => theme.colorActive};
   }
 `;

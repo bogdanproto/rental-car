@@ -1,7 +1,6 @@
 export * from './Logo/Logo';
 export * from './Error/ErrorInputForm.styled';
 export * from './Button/Button.styled';
-export * from './InputBoxIcon/InputBoxIcon.styled';
 export * from './Select/Select';
 export * from './Input/Input';
 export * from './Modal/Modal';
@@ -12,3 +11,5 @@ export * from './IconBtn/IconBtn.styled';
 export * from './SearchForm/SearchForm';
 export * from './PageContainer/PageContainer.styled';
 export * from './LinkBtn/LinkBtn.styled';
+export * from './NotMatches/NotMatches';
+export * from './Notify/Notify';

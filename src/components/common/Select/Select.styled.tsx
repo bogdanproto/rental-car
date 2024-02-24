@@ -18,7 +18,7 @@ export const SelectStyled = styled.div`
     height: 48px;
     box-sizing: border-box;
 
-    padding: 14px 89px 14px 18px;
+    padding: 14px 18px 14px 18px;
 
     border: none;
     box-shadow: ${({ theme }) => theme.shadowInput};

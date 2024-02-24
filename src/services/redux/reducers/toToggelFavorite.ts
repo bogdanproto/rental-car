@@ -3,7 +3,7 @@ import { errorMessage } from 'const';
 import { ISliceData } from 'interfaces';
 import { IAdvert } from 'interfaces/data/IData';
 
-export const toAddToFavorite = (
+export const toToggelFavorite = (
   state: ISliceData,
   action: PayloadAction<number>
 ) => {
@@ -19,7 +19,7 @@ export const toAddToFavorite = (
   const advert = state.adverts.find((advert: IAdvert) => advert.id === id);
 
   if (!advert) {
-    state.error = errorMessage.not_found_id;
+    state.error = errorMessage.NOT_FOUND_ID;
     return;
   }
 

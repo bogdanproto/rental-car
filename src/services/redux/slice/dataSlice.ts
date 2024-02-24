@@ -8,7 +8,11 @@ import {
   handleRejectedData,
 } from '../handlesStatus';
 import { getAllAdverts } from '../operations/getAllAdverts';
-import { toAddToFavorite, toSetFilter } from '../reducers';
+import {
+  toSetCatalogFilter,
+  toSetFavoriteFilter,
+  toToggelFavorite,
+} from '../reducers';
 
 const initialState: ISliceData = {
   adverts: [],
@@ -16,15 +20,23 @@ const initialState: ISliceData = {
   makes: [],
 
   pagination: {
-    page: 1,
+    page: 0,
     limit: 12,
   },
 
   filter: {
-    make: '',
-    price: '',
-    mileageFrom: '',
-    mileageTo: '',
+    adverts: {
+      make: '',
+      price: '',
+      mileageFrom: '',
+      mileageTo: '',
+    },
+    favoriteAdverts: {
+      make: '',
+      price: '',
+      mileageFrom: '',
+      mileageTo: '',
+    },
   },
 
   error: null,
@@ -35,8 +47,9 @@ const dataSlice = createSlice({
   name: 'data',
   initialState,
   reducers: {
-    addToFavorite: toAddToFavorite,
-    setFilter: toSetFilter,
+    toggelFavorite: toToggelFavorite,
+    setCatalogFilter: toSetCatalogFilter,
+    setFavoriteFilter: toSetFavoriteFilter,
   },
   extraReducers: builder => {
     builder
@@ -54,4 +67,5 @@ const dataSlice = createSlice({
 });
 
 export const dataSliceReducer = dataSlice.reducer;
-export const { addToFavorite, setFilter } = dataSlice.actions;
+export const { toggelFavorite, setCatalogFilter, setFavoriteFilter } =
+  dataSlice.actions;

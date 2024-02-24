@@ -11,7 +11,7 @@ export const SearchFormStyled = styled.form`
   }
 
   select {
-    &[name='rentalPrice'] {
+    &[name='price'] {
       width: 160px;
     }
 
@@ -21,12 +21,12 @@ export const SearchFormStyled = styled.form`
   }
 
   input {
-    &[name='fromKm'] {
+    &[name='mileageFrom'] {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
 
-    &[name='toKm'] {
+    &[name='mileageTo'] {
       padding-left: 38px;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
@@ -41,7 +41,18 @@ export const SearchFormStyled = styled.form`
 `;
 
 export const InputConnectBox = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+`;
+
+export const ErrorInputForm = styled.span`
+  position: absolute;
+  bottom: -14px;
+  left: 4px;
+
+  font-size: 12px;
+
+  color: ${({ theme }) => theme.colorErrorsInput};
 `;

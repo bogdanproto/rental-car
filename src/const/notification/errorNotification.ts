@@ -1,5 +1,6 @@
 import { IErrorsList } from 'interfaces/error/errorInterface';
 
 export const errorMessage: IErrorsList = Object.freeze({
-  not_found_id: 'Not Found Id',
+  ERR_BAD_REQUEST: 'Sometnihg went wrong, try to reload the app',
+  NOT_FOUND_ID: 'Cant found id',
 });

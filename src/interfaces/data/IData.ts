@@ -26,7 +26,7 @@ export interface ISliceData {
   favoriteAdverts: IAdvert[];
   makes: ISelectOption[];
   pagination: IParams;
-  filter: IFilter | null;
+  filter: { adverts: IFilter; favoriteAdverts: IFilter };
   error: string | null;
   isLoading: boolean;
 }
