@@ -1,19 +1,33 @@
-import { Card, List, PageContainer, SearchForm } from 'components/common';
+import {
+  Card,
+  List,
+  NotMatches,
+  PageContainer,
+  SearchForm,
+} from 'components/common';
 import { IAdvert } from 'interfaces/data/IData';
 import { useTypeSelector } from 'services/redux/customHook/typeHooks';
-import { selectFavorites } from 'services/redux/selectors';
+import {
+  selectAdverts,
+  selectFilterFavorite,
+  selectFilteredFav,
+} from 'services/redux/selectors';
+import { setFavoriteFilter } from 'services/redux/slice/dataSlice';
 
 const Favorites = () => {
-  const favAdverts = useTypeSelector(selectFavorites);
+  const favAdverts = useTypeSelector(selectAdverts);
+  const favFilteredAdverts = useTypeSelector(selectFilteredFav);
+  const currentFilter = useTypeSelector(selectFilterFavorite);
 
   return (
     <PageContainer>
-      <SearchForm />
+      <SearchForm setFilter={setFavoriteFilter} startFilter={currentFilter} />
       <List>
-        {favAdverts.length > 0 &&
-          favAdverts.map((advert: IAdvert) => (
-            <Card key={advert.id} advert={advert} />
-          ))}
+        {favFilteredAdverts.length > 0
+          ? favAdverts.map((advert: IAdvert) => (
+              <Card key={advert.id} advert={advert} />
+            ))
+          : favAdverts.length > 0 && <NotMatches />}
       </List>
     </PageContainer>
   );

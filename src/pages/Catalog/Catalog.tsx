@@ -6,19 +6,32 @@ import {
 import { getAllAdverts } from 'services/redux/operations/getAllAdverts';
 import {
   selectAdverts,
+  selectFilterCatalog,
+  selectFilteredAdverts,
   selectIsAdvertsExist,
+  selectIsFilterEmpty,
   selectParams,
 } from 'services/redux/selectors';
-import { Card, List, PageContainer, SearchForm } from 'components/common';
+import {
+  Card,
+  List,
+  NotMatches,
+  PageContainer,
+  SearchForm,
+} from 'components/common';
 import { BtnLink } from 'components/common/BtnLink/BtnLink.styled';
 import { IAdvert } from 'interfaces/data/IData';
+import { setCatalogFilter } from 'services/redux/slice/dataSlice';
 
 const Catalog = () => {
   const dispatch = useTypeDispatch();
 
+  const selectedAdverts = useTypeSelector(selectFilteredAdverts);
   const adverts = useTypeSelector(selectAdverts);
+  const currentFilter = useTypeSelector(selectFilterCatalog);
   const { page, limit } = useTypeSelector(selectParams);
   const isAdvertsExist = useTypeSelector(selectIsAdvertsExist);
+  const isFilterEmpty = useTypeSelector(selectIsFilterEmpty);
 
   useEffect(() => {
     if (adverts.length) {
@@ -33,15 +46,16 @@ const Catalog = () => {
 
   return (
     <PageContainer>
-      <SearchForm />
+      <SearchForm setFilter={setCatalogFilter} startFilter={currentFilter} />
       <List>
-        {adverts.length > 0 &&
-          adverts.map((advert: IAdvert) => (
-            <Card key={advert.id} advert={advert} />
-          ))}
+        {selectedAdverts.length > 0
+          ? selectedAdverts.map((advert: IAdvert) => (
+              <Card key={advert.id} advert={advert} />
+            ))
+          : adverts.length > 0 && <NotMatches />}
       </List>
 
-      {isAdvertsExist && (
+      {adverts.length > 0 && isAdvertsExist && isFilterEmpty && (
         <BtnLink type="button" onClick={handleClick}>
           Load more
         </BtnLink>

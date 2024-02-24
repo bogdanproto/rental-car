@@ -1,2 +1,3 @@
 export * from './toToggelFavorite';
-export * from './toSetFilter';
+export * from './toSetCatalogFilter';
+export * from './toSetFavoriteFilter';

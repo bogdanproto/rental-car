@@ -46,7 +46,7 @@ export const Card: React.FC<CardProps> = ({ advert }) => {
     <>
       <CardContainer>
         <IconBtn onClick={() => handleClickFavorite(advert.id)} type="button">
-          {isActive ? <IoMdHeart /> : <IoMdHeartEmpty />}
+          {isActive ? <IoMdHeart color="#3470FF" /> : <IoMdHeartEmpty />}
         </IconBtn>
 
         <img src={advert.img} alt={advert.make} />
