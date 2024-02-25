@@ -26,13 +26,15 @@ export const ModalWindow: React.FC<ModalWindowProps> = ({
           position: 'absolute',
           top: '50%',
           left: '50%',
-          transform: 'translate(-50%, -50%)',
+          transform: 'translate(-50%, -50%) scale(0.8)',
 
           borderRadius: '8px',
           boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
           width: 'fit-content',
           height: 'fit-content',
           padding: '40px',
+
+          transition: 'transform 0.3s ease',
         },
       }}
       isOpen={isOpen}
