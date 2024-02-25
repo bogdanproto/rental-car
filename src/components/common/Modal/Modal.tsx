@@ -21,6 +21,7 @@ export const ModalWindow: React.FC<ModalWindowProps> = ({
       style={{
         overlay: {
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: '1000',
         },
         content: {
           position: 'absolute',
