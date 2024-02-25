@@ -8,7 +8,7 @@ export const HomeContainer = styled.section`
   align-items: center;
   gap: 16px;
 
-  height: calc(100vh - 360px);
+  height: calc(100vh - 260px);
 
   img {
     max-width: 640px;
