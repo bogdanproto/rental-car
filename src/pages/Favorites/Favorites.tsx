@@ -1,11 +1,4 @@
-import {
-  Card,
-  List,
-  NotMatches,
-  PageContainer,
-  SearchForm,
-} from 'components/common';
-import { IAdvert } from 'interfaces/data/IData';
+import { List, NotMatches, PageContainer, SearchForm } from 'components/common';
 import { useTypeSelector } from 'services/redux/customHook/typeHooks';
 import {
   selectAdverts,
@@ -23,13 +16,11 @@ const Favorites = () => {
     <PageContainer>
       <SearchForm setFilter={setFavoriteFilter} currentFilter={currentFilter} />
 
-      <List>
-        {favFilteredAdverts.length > 0
-          ? favFilteredAdverts.map((advert: IAdvert) => (
-              <Card key={advert.id} advert={advert} />
-            ))
-          : favAdverts.length > 0 && <NotMatches />}
-      </List>
+      {favFilteredAdverts.length > 0 ? (
+        <List adverts={favFilteredAdverts} />
+      ) : (
+        favAdverts.length > 0 && <NotMatches />
+      )}
     </PageContainer>
   );
 };

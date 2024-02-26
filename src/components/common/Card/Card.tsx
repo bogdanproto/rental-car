@@ -17,13 +17,10 @@ import {
   formatTitle,
   formatWordFirstUpper,
   getClassCar,
-  useModal,
 } from 'services/helpers';
 import { IconBtn } from '../IconBtn/IconBtn.styled';
-import { ModalWindow } from '../Modal/Modal';
-import { CardDetail } from '../CardDetail/CardDetail';
 
-import { toggelFavorite } from 'services/redux/slice/dataSlice';
+import { openModal, toggelFavorite } from 'services/redux/slice/dataSlice';
 import { selectFavIds } from 'services/redux/selectors';
 
 interface CardProps {
@@ -32,7 +29,6 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ advert }) => {
   const dispatch = useTypeDispatch();
-  const { isOpen, toggle } = useModal();
 
   const isActive = useTypeSelector(state =>
     selectFavIds(state).includes(advert.id)
@@ -43,47 +39,41 @@ export const Card: React.FC<CardProps> = ({ advert }) => {
   };
 
   return (
-    <>
-      <CardContainer>
-        <IconBtn onClick={() => handleClickFavorite(advert.id)} type="button">
-          {isActive ? <IoMdHeart color="#3470FF" /> : <IoMdHeartEmpty />}
-        </IconBtn>
+    <CardContainer>
+      <IconBtn onClick={() => handleClickFavorite(advert.id)} type="button">
+        {isActive ? <IoMdHeart color="#3470FF" /> : <IoMdHeartEmpty />}
+      </IconBtn>
 
-        <img src={advert.img} alt={advert.make} />
+      <img src={advert.img} alt={advert.make} />
 
-        <div>
-          <TitleCard>
-            <h3>
-              {advert.make}
-              <span>{formatTitle(advert.make, advert.model)}</span>
-              {advert.year}
-            </h3>
-            <h3>{advert.rentalPrice}</h3>
-          </TitleCard>
+      <div>
+        <TitleCard>
+          <h3>
+            {advert.make}
+            <span>{formatTitle(advert.make, advert.model)}</span>
+            {advert.year}
+          </h3>
+          <h3>{advert.rentalPrice}</h3>
+        </TitleCard>
 
-          <SubtitleCard>
-            <p>
-              {`${formatAddress(advert.address)} |  
+        <SubtitleCard>
+          <p>
+            {`${formatAddress(advert.address)} |  
                 ${advert.rentalCompany} | 
                 ${getClassCar(advert.rentalPrice)} 
                  ${formatWordFirstUpper(advert.type)} |  
                 ${formatWordFirstUpper(advert.model)} | 
                 ${advert.id} | 
                 ${advert.functionalities[0]}`}
-            </p>
-          </SubtitleCard>
-        </div>
+          </p>
+        </SubtitleCard>
+      </div>
 
-        <ButtonBox>
-          <Button type="button" onClick={toggle}>
-            Learn more
-          </Button>
-        </ButtonBox>
-      </CardContainer>
-
-      <ModalWindow isOpen={isOpen} onClose={toggle}>
-        <CardDetail advert={advert} />
-      </ModalWindow>
-    </>
+      <ButtonBox>
+        <Button type="button" onClick={() => dispatch(openModal(advert))}>
+          Learn more
+        </Button>
+      </ButtonBox>
+    </CardContainer>
   );
 };

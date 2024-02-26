@@ -12,15 +12,8 @@ import {
   selectIsFilterEmpty,
   selectParams,
 } from 'services/redux/selectors';
-import {
-  Card,
-  List,
-  NotMatches,
-  PageContainer,
-  SearchForm,
-} from 'components/common';
+import { List, NotMatches, PageContainer, SearchForm } from 'components/common';
 import { BtnLink } from 'components/common/BtnLink/BtnLink.styled';
-import { IAdvert } from 'interfaces/data/IData';
 import { setCatalogFilter } from 'services/redux/slice/dataSlice';
 
 const Catalog = () => {
@@ -48,13 +41,12 @@ const Catalog = () => {
   return (
     <PageContainer>
       <SearchForm setFilter={setCatalogFilter} currentFilter={currentFilter} />
-      <List>
-        {selectedAdverts.length > 0
-          ? selectedAdverts.map((advert: IAdvert) => (
-              <Card key={advert.id} advert={advert} />
-            ))
-          : adverts.length > 0 && <NotMatches />}
-      </List>
+
+      {selectedAdverts.length > 0 ? (
+        <List adverts={selectedAdverts} />
+      ) : (
+        adverts.length > 0 && <NotMatches />
+      )}
 
       {adverts.length > 0 && isAdvertsExist && isFilterEmpty && (
         <BtnLink type="button" onClick={handleClick}>
