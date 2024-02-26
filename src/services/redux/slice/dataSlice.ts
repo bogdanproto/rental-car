@@ -9,6 +9,7 @@ import {
 } from '../handlesStatus';
 import { getAllAdverts } from '../operations/getAllAdverts';
 import {
+  toOpenModal,
   toSetCatalogFilter,
   toSetFavoriteFilter,
   toToggelFavorite,
@@ -39,6 +40,10 @@ const initialState: ISliceData = {
     },
   },
 
+  modal: {
+    content: null,
+  },
+
   error: null,
   isLoading: false,
 };
@@ -50,6 +55,7 @@ const dataSlice = createSlice({
     toggelFavorite: toToggelFavorite,
     setCatalogFilter: toSetCatalogFilter,
     setFavoriteFilter: toSetFavoriteFilter,
+    openModal: toOpenModal,
   },
   extraReducers: builder => {
     builder
@@ -67,5 +73,9 @@ const dataSlice = createSlice({
 });
 
 export const dataSliceReducer = dataSlice.reducer;
-export const { toggelFavorite, setCatalogFilter, setFavoriteFilter } =
-  dataSlice.actions;
+export const {
+  toggelFavorite,
+  setCatalogFilter,
+  setFavoriteFilter,
+  openModal,
+} = dataSlice.actions;
