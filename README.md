@@ -1,6 +1,6 @@
 # Project Title
 
-UA Rental Car App - test ssh
+UA Rental Car App
 
 ## Description
 
